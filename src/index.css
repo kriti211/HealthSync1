@@ -1,0 +1,20 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the entire page is covered */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(to top left, rgb(255, 255, 255), rgb(209, 206, 201),orange);
+  background-repeat: no-repeat;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the React app takes up at least the full height */
+}
+
+main {
+  flex: 1; /* Pushes footer to the bottom */
+}

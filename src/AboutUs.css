@@ -1,0 +1,28 @@
+.about-container {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    color: black;
+    background-color: transparent;
+}
+
+.about-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-container ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
