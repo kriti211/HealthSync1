@@ -1,19 +1,27 @@
 
 import './App.css'
 import { BrowserRouter as Router, Routes, Route,useLocation } from "react-router-dom";
+import FitnessForm from './Components/Fitnessform';
+import Form from "./Components/Form";
+import MedicalForm from './Components/MedicalForm';
+import Lifeinfo from './Components/Lifeinfo';
 import { useState } from 'react';
 import Background from './Components/Background/Background';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Home';
 import About from './AboutUs';
 import Footer from './Components/Footer';
-import Contact from './ContactUs';
+import ContactUs from './ContactUs';
+import Login from './Login';
+import Schedule from './Schedule';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
   const [heroCount, setHeroCount] = useState(4);
   const [playStatus, setPlayStatus] = useState(false);
 
   return (
+    <GoogleOAuthProvider clientId="951737139747-pc5pea85gu7ooip363n2sb9c04da85pm.apps.googleusercontent.com">
         <Router>
       <Navbar />
       
@@ -23,14 +31,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/ContactUs" element={<Contact />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         {/* <Route path="/Login" element ={<Login></Login>}></Route> */}
+        <Route path='/schedule' element={<Schedule/>}></Route>
+        <Route path='/lifeinfo' element={<Lifeinfo/>}></Route>
+        
         {/* <Route path="/login" element={<Login />} />  */}
       </Routes>
 
       
       <Footer /> 
     </Router>
+    </GoogleOAuthProvider>
   
   );
 }

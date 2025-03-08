@@ -1,4 +1,26 @@
+// import { useNavigate } from 'react-router-dom';
+// import { Button } from 'antd';
+// import './Navbar.css';
 
+// const Navbar = () => {
+//     const navigate = useNavigate();
+
+//     return (
+//         <nav className='nav'>
+//             <div className='nav-logo' onClick={() => navigate("/")}>FitIndia</div>
+//             <ul className='nav-menu'>
+//                 <li><Button type="link" onClick={() => navigate("/")}>Home</Button></li>
+//                 <li><Button type="link" onClick={() => navigate("/about")}>About Us</Button></li>
+//                 <li><Button type="link" onClick={() => navigate("/ContactUs")}>Contact Us</Button></li>
+//                 <li className='nav-login'>
+//                     <Button type="primary" onClick={() => navigate("/login")}>Login</Button>
+//                 </li>
+//             </ul>
+//         </nav>
+//     );
+// };
+
+// export default Navbar;
 
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -6,6 +28,7 @@ import { Button } from 'antd';
 import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import './Navbar.css';
+import FitnessForm from '../Fitnessform';
 import React from 'react';
 
 const Navbar = () => {
@@ -80,15 +103,15 @@ const Navbar = () => {
                                     Logout
                                 </Button>
                             </div>
-                        ) : ( ""
-                            // <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
+                        ) : (
+                            <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
                         )}
                     </li>
                 </ul>
             </nav>
 
             {/* Show FitnessForm only if user is logged in */}
-            {/* {user && <FitnessForm email={user.email}/>} */}
+            {user && <FitnessForm email={user.email}/>}
         </>
     );
 };
